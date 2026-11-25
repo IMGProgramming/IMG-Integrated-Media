@@ -1994,7 +1994,7 @@ document.querySelectorAll(".mpick[data-r]").forEach(el=>{
   const k=el.dataset.r;
   el.innerHTML=`<span class="grp-lbl">Bulan</span><select aria-label="Dari bulan"></select><span class="sep">s/d</span><select aria-label="Sampai bulan"></select>`;
   const [a,b]=el.querySelectorAll("select");
-  [a,b].forEach(s=>MFULL.forEach((m,i)=>s.add(new Option(m,i))));
+  [a,b].forEach(s=>MFULL.forEach((m,i)=>s.add(new Option(m+" 2026",i))));
   a.addEventListener("change",()=>{R[k].from=+a.value;if(R[k].to<R[k].from)R[k].to=R[k].from;render()});
   b.addEventListener("change",()=>{R[k].to=+b.value;if(R[k].from>R[k].to)R[k].from=R[k].to;render()});
 });
@@ -4250,7 +4250,7 @@ document.addEventListener("click", e => openMs.forEach(m => { if (!e.target.clos
 
 const monthsAll = T.monthly.labels;
 const chOpts = T.channels.map(c => ({ v: c, label: c }));
-const monOpt = k => ({ v: k, label: `${mName(k)} ${k.slice(0, 4)}${T.monthly.partial[k] ? ` (${T.monthly.partial[k]})` : ""}`, short: mName(k).slice(0, 3) });
+const monOpt = k => ({ v: k, label: `${mName(k)} ${k.slice(0, 4)}`, short: mName(k).slice(0, 3) });
 
 const charts = {};
 function panel(id, cfg) {
@@ -5170,7 +5170,7 @@ function fillWeeks() {  // weeks touching the chosen months (all weeks when none
 function init() {      // options need the data; parse it the first time it is used
   if (ready) return; ready = true;
   const D = data(), months = [...new Set(D.dates.map(d => mKey(d[0])))].sort();   // Januari -> Desember
-  monMs.setOptions(months.map(k => ({ v: k, label: `${MID[+k.slice(4) - 1]} ${k.slice(0, 4)}`, short: `${MON[+k.slice(4) - 1]} ${k.slice(2, 4)}` })));
+  monMs.setOptions(months.map(k => ({ v: k, label: `${MID[+k.slice(4) - 1]} ${k.slice(0, 4)}`, short: MON[+k.slice(4) - 1] })));
   fillWeeks();
   chMs.setOptions(D.ch.map((c, i) => ({ v: String(i), label: c })));
 }
@@ -5629,7 +5629,7 @@ const wkDays = w => P.days.filter(d => d[1] === w);
 const monMs = MultiSelect($("prMon"), { placeholder: "Pilih bulan", unit: "bulan" });
 const wkMs = MultiSelect($("prWk"), { placeholder: "Pilih week", unit: "week" });
 monMs.setOptions(months.map(m => { const n = P.days.filter(d => mk(d[0]) === m).length;
-  return { v: m, label: mName(m), short: MID[+m.slice(5) - 1].slice(0, 3), note: n < new Date(+m.slice(0, 4), +m.slice(5), 0).getDate() ? `${n} hari` : "" }; }));
+  return { v: m, label: mName(m), short: MID[+m.slice(5) - 1].slice(0, 3) }; }));
 function fillWeeks() {   // with months chosen, only the weeks that have days in those months
   const ms = new Set(monMs.values);
   wkMs.setOptions(weeks.filter(w => !ms.size || wkDays(w).some(d => ms.has(mk(d[0]))))
