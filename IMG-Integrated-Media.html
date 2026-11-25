@@ -1157,7 +1157,6 @@ aside.mnote{display:none!important}
 
 
 
-
   <!-- ===================== LAYER: DATA ===================== -->
   <div class="layer" id="layer-data" data-layer="data" role="tabpanel">
 
@@ -1193,7 +1192,6 @@ aside.mnote{display:none!important}
     <div class="eco-period" id="ecoPeriod2"></div>
   </section>
   <!-- ECO2:END -->
-
 
 
 
@@ -1538,7 +1536,6 @@ aside.mnote{display:none!important}
 
 
 
-
   <!-- ===================== LAYER: CONTENT ===================== -->
   <div class="layer" id="layer-content" data-layer="content" role="tabpanel" hidden>
 
@@ -1810,7 +1807,6 @@ aside.mnote{display:none!important}
   </aside>
   </div><!-- /layer-promo -->
   <!-- PROMO:END -->
-
 
 
 
@@ -4411,7 +4407,7 @@ function MultiSelect(root, { placeholder, unit, max, preset }) {
 document.addEventListener("click", e => openMs.forEach(m => { if (!e.target.closest(".ms")) m.close(); }));
 
 const months = [...new Set(T.dates.map(d => mk(d[0])))];
-const weeks = [...new Set(T.dates.map(d => d[1]))].sort((a, b) => a - b);
+const weeks = [...new Set(T.dates.map(d => d[1]))];   // first-seen order = chronological (W53 of 1-3 Jan before W1)
 const wkDates = w => T.dates.filter(d => d[1] === w);
 const monMs = MultiSelect($("t30Mon"), { placeholder: "Pilih bulan", unit: "bulan" });
 const wkMs = MultiSelect($("t30Wk"), { placeholder: "Pilih week", unit: "week" });
@@ -5165,15 +5161,15 @@ const MID = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus",
 const mKey = s => s.slice(6) + s.slice(3, 5);   // dd/mm/yyyy → yyyymm
 let ready = false;
 const weekDates = w => data().dates.map((d, i) => [d, i]).filter(([d]) => d[1] === w).map(([, i]) => i);
-function fillWeeks() {  // weeks touching the chosen months (all weeks when none chosen), newest first
+function fillWeeks() {  // weeks touching the chosen months (all weeks when none chosen), Week kecil -> besar
   const D = data(), ms = new Set(monMs.values);
-  const weeks = [...new Set(D.dates.filter(d => !ms.size || ms.has(mKey(d[0]))).map(d => d[1]))].sort((a, b) => b - a);
+  const weeks = [...new Set(D.dates.filter(d => !ms.size || ms.has(mKey(d[0]))).map(d => d[1]))].sort((a, b) => a - b);   // Week kecil -> besar (Friend, 2026-11-25)
   wkMs.setOptions(weeks.map(w => { const ix = weekDates(w), a = D.dates[ix[0]][0], b = D.dates[ix[ix.length - 1]][0];
     return { v: String(w), label: `Week ${w}`, short: `W${w}`, note: `${dShort(a)} – ${dShort(b)}${ix.length < 7 ? ` (${ix.length} hari)` : ""}` }; }));
 }
 function init() {      // options need the data; parse it the first time it is used
   if (ready) return; ready = true;
-  const D = data(), months = [...new Set(D.dates.map(d => mKey(d[0])))].sort().reverse();
+  const D = data(), months = [...new Set(D.dates.map(d => mKey(d[0])))].sort();   // Januari -> Desember
   monMs.setOptions(months.map(k => ({ v: k, label: `${MID[+k.slice(4) - 1]} ${k.slice(0, 4)}`, short: `${MON[+k.slice(4) - 1]} ${k.slice(2, 4)}` })));
   fillWeeks();
   chMs.setOptions(D.ch.map((c, i) => ({ v: String(i), label: c })));
