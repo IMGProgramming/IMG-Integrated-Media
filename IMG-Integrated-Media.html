@@ -1157,6 +1157,7 @@ aside.mnote{display:none!important}
 
 
 
+
   <!-- ===================== LAYER: DATA ===================== -->
   <div class="layer" id="layer-data" data-layer="data" role="tabpanel">
 
@@ -1192,6 +1193,7 @@ aside.mnote{display:none!important}
     <div class="eco-period" id="ecoPeriod2"></div>
   </section>
   <!-- ECO2:END -->
+
 
 
 
@@ -1494,7 +1496,7 @@ aside.mnote{display:none!important}
       <li><b>Periode parsial:</b> bulan atau week yang datanya belum penuh diberi tanda * (mis. Oktober = 1–6 Okt; Week 40 = 4–6 Okt). Week 1 = 1–10 Jan, setelah itu Minggu–Sabtu. Filter Bulan pada Weekly memuat week yang harinya jatuh di bulan itu, jadi week di pergantian bulan muncul di kedua bulan. Weekly juga punya filter Week: bisa dipilih sendiri, atau setelah Bulan (daftarnya lalu hanya berisi week di bulan itu); week yang dipilih saja yang ditampilkan.</li>
       <li><b>Grafik:</b> garis untuk tren (4 periode atau lebih); batang bila periode yang dipilih hanya 1–3.</li>
       <li><b>Composition Fresh Program:</b> RAW INEWS, sheet Program Detail REV2, kolom Category ("Fresh"/"FRESH" = Fresh, "Rerun" = Rerun). Persentase = porsi <i>durasi tayang</i> (kolom Dur) Fresh dan Rerun terhadap total durasi channel pada hari-hari terpilih. Angka jam = rata-rata durasi Fresh / Rerun per hari (total menit ÷ jumlah hari yang ada datanya ÷ 60). Bulan dan Week bisa dipilih sendiri-sendiri (boleh lebih dari satu); setelah Bulan dipilih, daftar Week hanya berisi week di bulan itu, dan bila keduanya dipilih yang dihitung adalah hari yang masuk keduanya.</li>
-      <li><b>Daily Performance:</b> RAW INEWS, sheet PERFORMANCE DAILY (TV share % harian per channel FTA, 1 Jan – 22 Nov 2026). Pilih Bulan, lalu Tanggal (daftarnya mengikuti bulan; boleh lebih dari satu), lalu Channel (boleh Pilih semua, 19 channel FTA). Satu tanggal = rank share hari itu; beberapa tanggal = rank rata-rata share hari-hari terpilih; Tanggal kosong = rata-rata semua hari di bulan terpilih. Batang diurutkan dari share tertinggi; INEWS berwarna merah.</li>
+      <li><b>Daily Performance:</b> RAW INEWS, sheet PERFORMANCE DAILY (TV share % harian per channel FTA, 1 Jan – 24 Nov 2026). Pilih Bulan, lalu Tanggal (daftarnya mengikuti bulan; boleh lebih dari satu), lalu Channel (boleh Pilih semua, 19 channel FTA). Satu tanggal = rank share hari itu; beberapa tanggal = rank rata-rata share hari-hari terpilih; Tanggal kosong = rata-rata semua hari di bulan terpilih. Batang diurutkan dari share tertinggi; INEWS berwarna merah.</li>
       <li><b>Kontribusi (kolom hijau di tabel Share by Daypart):</b> RAW INEWS, sheet Kontribusi By Daypart, channel Total TV. Kontribusi daypart = (000s daypart × durasi daypart dalam menit) ÷ total (000s × durasi) semua daypart, dijumlah untuk semua tanggal pada Bulan / Week / Tanggal yang dipilih — bukan penjumlahan 000s mentah; total 8 daypart = 100%. Data kontribusi mulai 4 Jan 2026.</li>
       <li><b>Performance by Daypart:</b> RAW INEWS, sheet SHARE DAYPART MONTHLY / WEEKLY / DAILY (TV share % per daypart per channel FTA; GARUDA TV = GARUDATV). Basis share mengikuti sheet: INEWS, TVONE, KOMPASTV, METRO, RTV, MDTV, RCTI, SCTV, MNCTV, TRANS, TRANS7, IVM, GTV, ANTV = share terhadap total 14 channel tersebut; MENTARI, MOJI, SINPO, GARUDATV, CNN INDONESIA, NUSANTARATV = share biasa (terhadap total TV). Karena itu jumlah semua channel per daypart bisa lebih dari 100%, dan share daypart 14 channel bisa lebih tinggi dari Total Day. Filter yang paling rinci menentukan sheet: Tanggal → DAILY, kalau tidak ada Tanggal → WEEKLY bila Week dipilih, selain itu → MONTHLY. Week bisa dipilih sendiri (daftarnya mengikuti Bulan bila Bulan dipilih); Tanggal bisa dipilih setelah Bulan atau Week (daftarnya mengikuti keduanya). Beberapa periode sekaligus = rata-rata share per daypart. Baris Total Day = share satu hari penuh dari sheet PERFORMANCE MONTHLY / WEEKLY / DAILY. Warna sel = tinggi-rendah share di daypart itu; kotak tebal = share tertinggi di daypart itu di antara channel terpilih. Ringkasan: rank iNews dihitung di antara semua channel FTA; perbandingan vs periode sebelumnya hanya bila satu periode dipilih. Nama daypart: Early Morning 02:00–04:29, Morning 04:30–09:59, Noon 1 10:00–12:59, Noon 2 13:00–15:59, Evening 16:00–17:59, Prime Time 18:00–21:59, Night 22:00–23:59, Midnight 24:00–25:59. Filter Daypart berdiri sendiri: bila dipilih, tampil trend daypart itu di periode yang dipilih (Tanggal; atau Week, dengan satu Week saja = trend harian di week itu; atau satu Bulan = semua tanggal di bulan itu; beberapa Bulan = per bulan; tanpa Bulan = semua bulan); beberapa daypart = tombol di atas tabel untuk berpindah. Tanpa Daypart tetapi dengan Bulan/Week/Tanggal: tombol "Semua Daypart" (share rata-rata per daypart) + satu tombol per daypart berisi trend-nya.</li>
       <li><b>Customize:</b> data sama dengan Top 30 Program (RAW INEWS, sheet Program Detail REV2 &amp; Program Detail Others, semua channel FTA). Kata kunci dipilih lewat popup: baris <i>Include</i> = program yang namanya mengandung teks itu ikut dicari (cukup salah satu), baris <i>Exclude</i> = program yang mengandung teks itu dibuang; huruf besar/kecil tidak berpengaruh. Program hanya dicari di channel yang dicentang, dan pada tanggal yang dipilih di kalender (kosong = semua tanggal). Satu baris = satu program pada tanggal / week / bulan itu (pilihan di Opsi Tabel); TVR, Share, 000s = rata-rata per penayangan. Summary per channel dan Summary Columns = rata-rata seluruh penayangan di baris-baris itu. Kolom bisa disembunyikan dan diurutkan bebas (Opsi Tabel atau geser judul kolom); urutan tersimpan di browser masing-masing. Start/End Time = jam mulai/selesai penayangan pertama program itu pada hari tersebut (format Nielsen, bisa lewat 24:00, mis. 25:30 = 01:30 dini hari); bila baris per Week/Bulan/Program, yang ditampilkan jam yang paling sering. Level 1/2 = kategori yang paling sering tercatat untuk program itu. Versi rerun "(R)" dan tiap judul pertandingan tercatat sebagai program sendiri, sesuai sheet.</li>
@@ -1505,6 +1507,7 @@ aside.mnote{display:none!important}
   </aside>
   </div><!-- /layer-datatv -->
   <!-- DATATV:END -->
+
 
 
 
@@ -1828,6 +1831,7 @@ aside.mnote{display:none!important}
 
 
 
+
   <!-- LIBRARY:BEGIN -->
   <!-- ===================== LAYER: LIBRARY ===================== -->
   <div class="layer" id="layer-library" data-layer="library" role="tabpanel" hidden>
@@ -1911,12 +1915,12 @@ aside.mnote{display:none!important}
     <div><b>Pola Acara:</b> Sumber: Grid/Pola Acara INEWS (01 GRID JANUARI 2026 s.d. 11 GRID NOVEMBER 2026), WEEK_53 – WEEK_48 (29 Des 2025 – 6 Des 2026). Special Program: Special Program iNews 2026 (Jan – Des 2026, 117 event).</div>
     <div><b>Pola · RKAT:</b> Sumber: RKAT.xlsx (Plan RKAT 2025–2027, Actual 2025–2026), biaya per bulan NEWS &amp; NON NEWS.</div>
     <div><b>Ecosystem:</b> Sumber: RAW INEWS, sheet Ecosystem (Total Reach iNews Media Group, by platform, TV FTA, YouTube, sosial media), Mei – Okt 2026.</div>
-    <div><b>Data TV:</b> Sumber: RAW INEWS, sheet PERFORMANCE MONTHLY &amp; PERFORMANCE WEEKLY (TV Share % FTA, Nielsen), data s.d. 22 Nov 2026.</div>
-    <div><b>Data TV · Daily Performance:</b> Sumber: RAW INEWS, sheet PERFORMANCE DAILY (TV Share % harian, FTA), 1 Jan – 22 Nov 2026.</div>
-    <div><b>Data TV · Performance by Daypart:</b> Sumber: RAW INEWS, sheet SHARE DAYPART MONTHLY / WEEKLY / DAILY (+ PERFORMANCE untuk Total Day), 1 Jan – 22 Nov 2026.</div>
+    <div><b>Data TV:</b> Sumber: RAW INEWS, sheet PERFORMANCE MONTHLY &amp; PERFORMANCE WEEKLY (TV Share % FTA, Nielsen), data s.d. 24 Nov 2026.</div>
+    <div><b>Data TV · Daily Performance:</b> Sumber: RAW INEWS, sheet PERFORMANCE DAILY (TV Share % harian, FTA), 1 Jan – 24 Nov 2026.</div>
+    <div><b>Data TV · Performance by Daypart:</b> Sumber: RAW INEWS, sheet SHARE DAYPART MONTHLY / WEEKLY / DAILY (+ PERFORMANCE untuk Total Day), 1 Jan – 24 Nov 2026.</div>
     <div><b>Data TV · Customize:</b> Sumber: RAW INEWS, sheet Program Detail REV2 &amp; Program Detail Others (TVR, Share, 000s, Level 1, Level 2 per penayangan; semua channel FTA) — data yang sama dengan Top 30 Program.</div>
-    <div><b>Data TV · Top 30 Program:</b> Sumber: RAW INEWS, sheet Program Detail REV2 &amp; Program Detail Others (TVR, Share, 000s per penayangan; semua channel FTA), 1 Jan – 22 Nov 2026.</div>
-    <div><b>Data TV · Rating Map (SPR):</b> Sumber: RAW INEWS, sheet Program Detail REV2 &amp; Program Detail Others (program, jam, TVR, Share) dan PERFORMANCE DAILY (share harian), 1 Jan – 22 Nov 2026.</div>
+    <div><b>Data TV · Top 30 Program:</b> Sumber: RAW INEWS, sheet Program Detail REV2 &amp; Program Detail Others (TVR, Share, 000s per penayangan; semua channel FTA), 1 Jan – 23 Nov 2026.</div>
+    <div><b>Data TV · Rating Map (SPR):</b> Sumber: RAW INEWS, sheet Program Detail REV2 &amp; Program Detail Others (program, jam, TVR, Share) dan PERFORMANCE DAILY (share harian), 1 Jan – 23 Nov 2026.</div>
     <div><b>Data TV · Rating Map (SPR) Pay TV:</b> Sumber: RAW INEWS, sheet Program Detail Paytv (SINDONEWS TV, IDX CHANNEL) &amp; PERFORMANCE DAILY PAYTV / PERFORMANCE WEEKLY (share harian &amp; mingguan Pay TV), 4 Jan – 18 Nov 2026.</div>
     <div><b>Promo · CB Promo Duration:</b> Sumber: RAW INEWS, sheet CB PROMO DAILY (durasi promo per daypart, INEWS / TVONE / KOMPASTV / METRO), 1 Jun – 22 Nov 2026.</div>
     <div><b>Promo · Promo Program:</b> Sumber: CB Promo By Program (sheet CB Promo Program, Nama Program, latihan), week 35–40.</div>
@@ -2206,7 +2210,7 @@ window.addEventListener("hashchange",()=>showLayer(location.hash.slice(1),false)
   const tb=$("topbar"), root=document.documentElement;
   const setH=()=>root.style.setProperty("--topbar-h",tb.offsetHeight+"px");
   let stuck=false;
-                                                                    const shrink=on=>{tb.style.marginBottom="";tb.classList.remove("stuck");if(!on)return;const hh=()=>tb.getBoundingClientRect().height,h0=hh(),k=(h0/tb.offsetHeight)||1;tb.classList.add("stuck");tb.style.marginBottom=Math.max(0,(h0-hh())/k)+"px"};window.addEventListener("resize",()=>{if(stuck)shrink(true)});/*RFIX*/
+                                                                      const shrink=on=>{tb.style.marginBottom="";tb.classList.remove("stuck");if(!on)return;const hh=()=>tb.getBoundingClientRect().height,h0=hh(),k=(h0/tb.offsetHeight)||1;tb.classList.add("stuck");tb.style.marginBottom=Math.max(0,(h0-hh())/k)+"px"};window.addEventListener("resize",()=>{if(stuck)shrink(true)});/*RFIX*/
   const onScroll=()=>{
     const y=window.scrollY||root.scrollTop;
     if(!stuck&&y>90){stuck=true;shrink(true)}
@@ -4104,7 +4108,7 @@ redraw();
 <script>
 /* ---- TA · target audience files + picker (Data TV › Program, Customize, Home) ---- */
 (function(){
-const LIST = ["20+ UM", "15+ UM", "5+ UM", "ALL 5+ TERRE", "KIDS (5-9) TERRE", "TEENS (10-19) TERRE", "HOUSEWIFE 30+ TERRE", "MALE 20+ TERRE", "MALE 30+ TERRE", "FEMALE 20+ TERRE", "FEMALE 30+ TERRE", "Total Individuals"], BASE = "20+ UM", FILES = {"20+ UM": "ta-20-um.json?v=924848bb53", "15+ UM": "ta-15-um.json?v=876aee7fa2", "5+ UM": "ta-5-um.json?v=bcf01fee47", "ALL 5+ TERRE": "ta-all-5-terre.json?v=9001ed4ad9", "KIDS (5-9) TERRE": "ta-kids-5-9-terre.json?v=1a2533b975", "TEENS (10-19) TERRE": "ta-teens-10-19-terre.json?v=8e9cf7c6f0", "HOUSEWIFE 30+ TERRE": "ta-housewife-30-terre.json?v=a91b07bc56", "MALE 20+ TERRE": "ta-male-20-terre.json?v=e17f349530", "MALE 30+ TERRE": "ta-male-30-terre.json?v=748f581906", "FEMALE 20+ TERRE": "ta-female-20-terre.json?v=b04dcaf1e4", "FEMALE 30+ TERRE": "ta-female-30-terre.json?v=9cc2111cec", "Total Individuals": "ta-total-individuals.json?v=55c3e9d50a"};
+const LIST = ["20+ UM", "15+ UM", "5+ UM", "ALL 5+ TERRE", "KIDS (5-9) TERRE", "TEENS (10-19) TERRE", "HOUSEWIFE 30+ TERRE", "MALE 20+ TERRE", "MALE 30+ TERRE", "FEMALE 20+ TERRE", "FEMALE 30+ TERRE", "Total Individuals"], BASE = "20+ UM", FILES = {"20+ UM": "ta-20-um.json?v=7ad11a6b6f", "15+ UM": "ta-15-um.json?v=2cbce14140", "5+ UM": "ta-5-um.json?v=5974c2fe76", "ALL 5+ TERRE": "ta-all-5-terre.json?v=0a3b62648a", "KIDS (5-9) TERRE": "ta-kids-5-9-terre.json?v=5b2f3141df", "TEENS (10-19) TERRE": "ta-teens-10-19-terre.json?v=84d84b3fac", "HOUSEWIFE 30+ TERRE": "ta-housewife-30-terre.json?v=f79bfeccd8", "MALE 20+ TERRE": "ta-male-20-terre.json?v=62447602bc", "MALE 30+ TERRE": "ta-male-30-terre.json?v=6ce11f2642", "FEMALE 20+ TERRE": "ta-female-20-terre.json?v=21d24dc701", "FEMALE 30+ TERRE": "ta-female-30-terre.json?v=3a893ea679", "Total Individuals": "ta-total-individuals.json?v=fdc0ca326e"};
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const cache = new Map();   // name -> Promise<file>; keeps the 3 most recent audiences
 function get(name) {
@@ -4149,7 +4153,7 @@ window.__TA = { list: LIST, base: BASE, get, picker, isBase: n => !n || n === BA
 <script>
 /* ---- DATA TV · lazy data loader (tv-data.json) ---- */
 (function(){
-const SRC = "tv-data.json?v=004fcf6561";
+const SRC = "tv-data.json?v=65e819b54b";
 let busy = null, ready = false; const waiting = [];
 window.__TV = null;
 window.__tvWhen = fn => { if (ready) fn(); else waiting.push(fn); };
